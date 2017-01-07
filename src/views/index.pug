@@ -1,0 +1,42 @@
+doctype html
+html(lang="en")
+    head
+        meta(http-equiv="X-UA-Compatible",content="IE=edge")
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0")
+        title Burst - Digitale daadkracht
+        style.
+            @keyframes slideUp {
+                from {
+                    transform: translateY(0);
+                }
+                to {
+                    transform: translateY(-100%);
+                }
+            }
+
+            #pageloader {
+                animation: slideUp 750ms 3s forwards;
+                background-color: red;
+                height: 100%;
+                left: 0;
+                position: fixed;
+                top: 0;
+                z-index: 999999;
+                width: 100%;
+            }
+
+            #pageloader svg {
+                fill: #fff;
+                margin: auto;
+                max-width: 150px;
+                position: absolute;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                right: 0;
+            }
+    body
+        #app
+        //div#pageloader
+        //  include ../svg/burst-loading.svg

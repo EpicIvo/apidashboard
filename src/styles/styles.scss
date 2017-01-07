@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Bitter:400,400i,700&subset=latin-ext');
+@import url('https://fast.fonts.net/cssapi/235a8516-d6cb-423f-a14d-f3e79ff6f508.css');
+@import 'vendor/_stdcss.0.0.7.scss';
+@import 'mixins/_breakpoints.scss';
+@import 'mixins/_fluid-type.scss';
+@import 'mixins/_responsive-font.scss';
+@import 'layout/_typography.scss';
+
+* {
+    box-sizing: border-box;
+}
+
+#app {
+    height: 100vh;
+    position: relative;
+}
+
+.wrapper {
+    overflow: hidden;
+}
+
+.content-container .container {
+    padding-bottom: 9%;
+    padding-top: 9%;
+
+    @include breakpoint(tablet) {
+        padding-top: 75px;
+        padding-bottom: 55px;
+    }
+}
+
+.only-mobile {
+    @include breakpoint(tablet) {
+        display: none;
+    }
+}
