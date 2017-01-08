@@ -8,6 +8,10 @@ let Site = new Schema({
     slug: String,
     paths: Array,
     domains: Array,
+    timestamp: {
+        type: Date,
+        default: Date.now
+    }
 });
 
-module.exports = mongoose.model('Sites', Site);
+module.exports = mongoose.model('Site', Site);

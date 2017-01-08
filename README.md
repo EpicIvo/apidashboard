@@ -1,2 +1,2 @@
-# Burst Website 2017
-All info can be found at http://wiki.burstnet.nl/wiki/Burst_website
+# Burst Visual Testing Module Dashboard
+Dashboard can be found at http://vtm.burstnet.nl.

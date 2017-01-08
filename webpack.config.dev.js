@@ -14,7 +14,7 @@ export default {
         // must be first entry to properly set public path
         'whatwg-fetch',
         'babel-polyfill',
-        './src/webpack-public-path',
+        './src/index.js',
         'webpack-hot-middleware/client?reload=true&quiet=true',
         path.resolve(__dirname, 'src/index.js') // Defining path seems necessary for this to work consistently on Windows machines.
     ],
