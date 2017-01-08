@@ -38,8 +38,6 @@ router.route('/platforms')
 
     .get(function (req, res) {
 
-        let base = 'http://vtm.burstnet.nl/v1/platforms/';
-
         Platform.find(function (err, platforms) {
 
             if (err) {

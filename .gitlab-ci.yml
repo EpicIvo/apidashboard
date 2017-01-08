@@ -1,6 +1,5 @@
 stages:
   - build
-  - deploy
 
 cache:
   paths:
@@ -12,26 +11,6 @@ build:
   script:
     - npm install
     - npm run build
-    - npm run build-static
   artifacts:
     paths:
       - public/
-pages:
-  stage: deploy
-  image: alpine
-  script:
-    - echo 'Page already generated'
-    - cp public/index.html public/404.html
-  artifacts:
-    paths:
-      - public/
-  dependencies:
-    - build
-  only:
-    - develop
-heroku:
-  stage: deploy
-  image: ruby
-  script:
-    - gem install dpl
-    - dpl --provider=heroku --api-key=$HEROKU_API_KEY --app=burst-web

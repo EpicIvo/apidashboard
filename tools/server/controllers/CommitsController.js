@@ -1,4 +1,4 @@
-import Commit from '../models/commits';
+import Commit from '../models/Commits';
 
 class CommitsController {
 
