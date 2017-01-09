@@ -13,6 +13,8 @@ class App extends React.Component {
                 <IndexLink to="/">VTM</IndexLink>
                 {' | '}
                 <Link to="/platforms">Platforms</Link>
+                {' | '}
+                <Link to="/configure">Configure</Link>
               </nav>
           </header>
             <div className="container">

@@ -39,16 +39,16 @@ class PlatformsOverviewPage extends Component {
                         <th>Name</th>
                         <th>Builds</th>
                         <th>Gitlab url</th>
+                        <th>Configure</th>
                     </tr>
                     </thead>
                     <tbody>
                     { this.state.platforms.map((platform) => <tr key={platform._id}>
                         <td>{platform._id}</td>
                         <td>{platform.name}</td>
-                        <td>
-                            <Link to={ "/platforms/" + platform._id } >View builds</Link>
-                        </td>
+                        <td><Link to={'/platforms/' + platform._id} >View builds</Link></td>
                         <td><a href={gitlabBase + platform.slug} target="_blank">{gitlabBase + platform.slug}</a></td>
+                        <td><Link to={'/configure/' + platform._id} >Configure</Link></td>
                     </tr> )}
                     </tbody>
                 </table>

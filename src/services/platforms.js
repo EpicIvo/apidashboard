@@ -20,6 +20,10 @@ class PlatformService {
     getBuilds(id) {
         return fetch(this.base + '/v1/platforms/' + id + '/builds').then(res => res.json());
     }
+
+    getSites(id) {
+        return fetch(this.base + '/v1/platforms/' + id + '/sites').then(res => res.json());
+    }
 }
 
 export default PlatformService;

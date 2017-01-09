@@ -3,6 +3,7 @@ import Platform from '../models/Platforms';
 import Commit from '../models/Commits';
 import BuildsController from '../controllers/BuildsController';
 import PlatformsController from '../controllers/PlatformsController';
+import SitesController from '../controllers/SitesController';
 
 const router = express.Router();
 
@@ -139,6 +140,20 @@ router.route('/platforms/:id')
         });
     });
 
+router.route('/platforms/:id/sites')
+
+    .get ((req, res) => {
+
+        SitesController
+            .findByPlatform(req.params.id)
+            .then((sites) => {
+                res.end(JSON.stringify({sites: sites}));
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    });
+
 router.route('/platforms/:id/builds')
 
     .get ((req, res) => {
@@ -150,7 +165,7 @@ router.route('/platforms/:id/builds')
             })
             .catch((err) => {
                 console.log(err);
-            })
+            });
     });
 
 router.route('/platforms/:id/commits')
