@@ -16,6 +16,10 @@ class PlatformService {
     getCommits(id) {
         return fetch(this.base + '/v1/platforms/' + id + '/commits').then(res => res.json());
     }
+
+    getBuilds(id) {
+        return fetch(this.base + '/v1/platforms/' + id + '/builds').then(res => res.json());
+    }
 }
 
 export default PlatformService;

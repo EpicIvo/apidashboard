@@ -12,8 +12,23 @@ const mongoUri = 'mongodb://wraith_user:dMqpsqxoB7tRwBZAZPnrhoDp@ds055862.mlab.c
 const app = express();
 const port = process.env.PORT || 3000;
 
+const mlab_options = {
+    server: {
+        socketOptions: {
+            keepAlive: 300000,
+            connectTimeoutMS: 30000
+        }
+    },
+    replset: {
+        socketOptions: {
+            keepAlive: 300000,
+            connectTimeoutMS: 30000
+        }
+    }
+};
+
 mongoose.Promise = Promise;
-mongoose.connect(mongoUri);
+mongoose.connect(mongoUri, mlab_options);
 
 const compiler = webpack(config);
 

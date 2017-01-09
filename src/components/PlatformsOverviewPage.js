@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 import PlatformService from '../services/platforms';
-import CommitService from '../services/commits';
 
 class PlatformsOverviewPage extends Component {
 
@@ -13,7 +13,6 @@ class PlatformsOverviewPage extends Component {
         };
 
         this.Platform = new PlatformService();
-        this.Commit = new CommitService();
     }
 
     componentDidMount() {
@@ -21,8 +20,8 @@ class PlatformsOverviewPage extends Component {
         this.Platform.get()
             .then((res) => {
                 res.platforms.map((platform) => {
-                    this.Platform.getCommits(platform._id).then((r) => {
-                        platform.commits = r.commits;
+                    this.Platform.getBuilds(platform._id).then((r) => {
+                        platform.builds = r.builds;
                     });
                 });
                 this.setState({platforms: res.platforms});
@@ -38,6 +37,7 @@ class PlatformsOverviewPage extends Component {
                     <tr>
                         <th>#</th>
                         <th>Name</th>
+                        <th>Builds</th>
                         <th>Gitlab url</th>
                     </tr>
                     </thead>
@@ -45,6 +45,9 @@ class PlatformsOverviewPage extends Component {
                     { this.state.platforms.map((platform) => <tr key={platform._id}>
                         <td>{platform._id}</td>
                         <td>{platform.name}</td>
+                        <td>
+                            <Link to={ "/platforms/" + platform._id } >View builds</Link>
+                        </td>
                         <td><a href={gitlabBase + platform.slug} target="_blank">{gitlabBase + platform.slug}</a></td>
                     </tr> )}
                     </tbody>

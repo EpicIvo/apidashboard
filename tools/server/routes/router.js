@@ -1,6 +1,8 @@
 import express from 'express';
 import Platform from '../models/Platforms';
 import Commit from '../models/Commits';
+import BuildsController from '../controllers/BuildsController';
+import PlatformsController from '../controllers/PlatformsController';
 
 const router = express.Router();
 
@@ -92,23 +94,14 @@ router.route('/platforms/:id')
 
     .get(function (req, res) {
 
-        let base = 'http://vtm.burstnet.nl/v1/platforms/';
-
-        let platform = req.platform.toJSON();
-
-        let json = {
-            item: platform,
-            _links: {
-                self: {
-                    href: base + platform._id
-                },
-                collection: {
-                    href: base
-                }
-            }
-        };
-
-        res.status(200).json(json);
+        PlatformsController
+            .findOne(req.params.id)
+            .then((platform) => {
+                res.end(JSON.stringify({platform: platform}));
+            })
+            .catch((err) => {
+                console.log(err);
+            });
     })
 
     .put(function (req, res) {
@@ -144,6 +137,20 @@ router.route('/platforms/:id')
 
             res.status(204).json({message: 'platform deleted'});
         });
+    });
+
+router.route('/platforms/:id/builds')
+
+    .get ((req, res) => {
+
+        BuildsController
+            .findByPlatform(req.params.id)
+            .then((builds) => {
+                res.end(JSON.stringify({builds: builds}));
+            })
+            .catch((err) => {
+                console.log(err);
+            })
     });
 
 router.route('/platforms/:id/commits')

@@ -9,6 +9,21 @@ class PlatformsController {
             });
         };
     }
+
+    static findOne(id) {
+        return new Promise((resolve, reject) => {
+
+            Platforms.findById(id, (err, platform) => {
+
+                if (!err) {
+                    resolve(platform);
+                }
+                else {
+                    reject(err);
+                }
+            });
+        });
+    }
 }
 
 export default PlatformsController;
