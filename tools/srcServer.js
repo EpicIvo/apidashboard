@@ -8,10 +8,10 @@ import router from './server/routes/router';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 
-const mongoUri = 'mongodb://wraith_user:dMqpsqxoB7tRwBZAZPnrhoDp@ds055862.mlab.com:55862/wraith';
+const mongo_dev = 'mongodb://wraith_user:dMqpsqxoB7tRwBZAZPnrhoDp@ds055862.mlab.com:55862/wraith';
 const app = express();
 const port = process.env.PORT || 3000;
-
+const mlab_url = process.env.MONGODB_URI || mongo_dev;
 const mlab_options = {
     server: {
         socketOptions: {
@@ -28,7 +28,7 @@ const mlab_options = {
 };
 
 mongoose.Promise = Promise;
-mongoose.connect(mongoUri, mlab_options);
+mongoose.connect(mlab_url, mlab_options);
 
 const compiler = webpack(config);
 

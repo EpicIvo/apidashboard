@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Visual Testing Module Dashboard",
   "engines": {
-    "npm": ">=3"
+    "npm": ">=3",
+    "node": "6.9.1"
   },
   "scripts": {
     "start": "npm-run-all --parallel serve:src lint:watch",

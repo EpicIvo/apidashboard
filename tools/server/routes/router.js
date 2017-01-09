@@ -154,6 +154,20 @@ router.route('/platforms/:id/sites')
             });
     });
 
+router.route('/builds')
+
+    .get ((req, res) => {
+
+        BuildsController
+            .find()
+            .then((builds) => {
+                res.end(JSON.stringify({builds: builds}));
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    });
+
 router.route('/platforms/:id/builds')
 
     .get ((req, res) => {
