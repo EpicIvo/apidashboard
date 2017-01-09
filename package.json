@@ -12,7 +12,8 @@
     "lint:watch": "npm run lint -- --watch",
     "build": "rimraf ./public && babel-node tools/build.js",
     "serve:src": "rimraf ./public && nodemon $NODE_DEBUG_OPTION ./tools/srcServer.js --exec babel-node --config ./nodemon.json",
-    "serve:public": "NODE_ENV=production babel-node tools/distServer.js"
+    "serve:public": "NODE_ENV=production babel-node tools/distServer.js",
+    "postinstall": "npm run build"
   },
   "author": "Burst",
   "license": "MIT",
