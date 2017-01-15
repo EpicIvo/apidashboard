@@ -45,7 +45,7 @@ class PlatformsDetailsPage extends Component {
                         <td>{build.ref}</td>
                         <td>{build.branch}</td>
                         <td>
-                            <a href={appVars.urls.gitlab + this.state.platform.slug + '/pipelines/' + build.ref} target="_blank">View build on Gitlab</a>
+                            <a href={appVars.urls.gitlab + this.state.platform.slug + '/builds/' + build.ref} target="_blank">View build on Gitlab</a>
                         </td>
                         <td>
                             <a href={appVars.urls.gallery + build.ref + '/gallery.html'} target="_blank">View gallery</a>

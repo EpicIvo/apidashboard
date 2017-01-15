@@ -6,15 +6,18 @@ class BuildsController {
 
         return new Promise((resolve, reject) => {
 
-            Build.find({}, (err, builds) => {
+            Build
+                .find({})
+                .sort({timestamp: -1 })
+                .exec((err, builds) => {
 
-                if (!err) {
-                    resolve(builds);
-                }
-                else {
-                    reject(err);
-                }
-            });
+                    if (!err) {
+                        resolve(builds);
+                    }
+                    else {
+                        reject(err);
+                    }
+                });
         });
     }
 
@@ -22,15 +25,18 @@ class BuildsController {
 
         return new Promise((resolve, reject) => {
 
-            Build.find({platform_id: platform_id}, (err, builds) => {
+            Build
+                .find({platform_id: platform_id})
+                .sort({timestamp: -1 })
+                .exec((err, builds) => {
 
-                if (!err) {
-                    resolve(builds);
-                }
-                else {
-                    reject(err);
-                }
-            });
+                    if (!err) {
+                        resolve(builds);
+                    }
+                    else {
+                        reject(err);
+                    }
+                });
         });
     }
 }

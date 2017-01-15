@@ -1,5 +1,5 @@
 import React from 'react';
-import BuildsOverviewPage from './BuildsOverviewPage'
+import BuildsOverviewPage from './BuildsOverviewPage';
 
 const HomePage = () => {
     return (
