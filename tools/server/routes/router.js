@@ -75,4 +75,32 @@ router.route('/platforms/:id/builds')
             });
     });
 
+router.route('/sites')
+
+    .get ((req, res) => {
+
+        SitesController
+            .find()
+            .then((sites) => {
+                res.end(JSON.stringify({sites: sites}));
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    });
+
+router.route('/sites/:id')
+
+    .get ((req, res) => {
+
+        SitesController
+            .findOne(req.params.id)
+            .then((site) => {
+                res.end(JSON.stringify({site: site}));
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    });
+
 export default router;

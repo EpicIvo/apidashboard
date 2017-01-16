@@ -51,6 +51,7 @@ export default {
             { test: /\.ico$/, loader: 'file?name=[name].[ext]' },
             { test: /(\.css|\.scss)$/, loaders: ['style', 'css?sourceMap', 'postcss', 'sass?sourceMap'] },
             { test: /\.json$/, loader: 'json' },
+            { test: /bootstrap.+\.(jsx|js)$/, loader: 'imports?jQuery=jquery,$=jquery,this=>window' },
             {
                 test: require.resolve('gsap'),
                 loader: 'imports-loader?module=>undefined&define=>false'

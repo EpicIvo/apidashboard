@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 import appVars from '../config/appVars';
 import PlatformService from '../services/platforms';
+import SiteService from '../services/sites';
 
 class ConfigurePage extends Component {
 
@@ -10,9 +11,9 @@ class ConfigurePage extends Component {
         super();
 
         this.state = {
-            sites: null
+            sites: null,
+            platforms: null
         };
-
         this.Platform = new PlatformService();
     }
 
@@ -20,9 +21,16 @@ class ConfigurePage extends Component {
 
         const id = this.props.params.id;
 
-        this.Platform.getSites(id).then((res) => {
-            this.setState({sites: res.sites});
-        });
+        if (id) {
+            this.Platform.getSites(id).then((res) => {
+                this.setState({sites: res.sites});
+            });
+        }
+        else {
+            this.Platform.get().then((res) => {
+                this.setState({platforms: res.platforms});
+            });
+        }
     }
 
     render() {
@@ -37,8 +45,12 @@ class ConfigurePage extends Component {
                     </thead>
                     <tbody>
                     { this.state.sites && this.state.sites.map((site) => <tr key={site._id}>
-                        <td>{site.name}</td>
+                        <td>{site.project}</td>
                         <td><Link to={'/configure/site/' + site._id} >Configure</Link></td>
+                    </tr> )}
+                    { this.state.platforms && this.state.platforms.map((platform) => <tr key={platform._id}>
+                        <td>{platform.name}</td>
+                        <td><Link to={'/configure/' + platform._id} >Configure</Link></td>
                     </tr> )}
                     </tbody>
                 </table>
