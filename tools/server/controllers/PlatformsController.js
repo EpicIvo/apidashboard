@@ -3,11 +3,18 @@ import Platforms from '../models/Platforms';
 class PlatformsController {
 
     static find() {
-        return (req, res) => {
-            Platforms.find({}, (err, platforms) => {
-                return res.end(JSON.stringify({platforms: platforms}));
+        return new Promise((resolve, reject) => {
+
+            Platforms.find((err, platforms) => {
+
+                if (!err) {
+                    resolve(platforms);
+                }
+                else {
+                    reject(err);
+                }
             });
-        };
+        });
     }
 
     static findOne(id) {
