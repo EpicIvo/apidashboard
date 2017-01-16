@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import appVars from '../config/appVars';
-import PlatformService from '../services/platforms';
-import SiteService from '../services/sites';
+import PlatformService from '../services/Platform';
+import SiteService from '../services/Site';
 
 class ConfigurePage extends Component {
 

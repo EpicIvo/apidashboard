@@ -1,4 +1,4 @@
-import Platforms from '../models/Platforms';
+import Platforms from '../models/Platform';
 
 class PlatformsController {
 

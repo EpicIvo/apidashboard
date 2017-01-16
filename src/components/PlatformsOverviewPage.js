@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-import PlatformService from '../services/platforms';
+import PlatformService from '../services/Platform';
 
 class PlatformsOverviewPage extends Component {
 

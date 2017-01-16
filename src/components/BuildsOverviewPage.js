@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import appVars from '../config/appVars';
-import BuildsService from '../services/builds';
-import PlatformService from '../services/platforms';
+import BuildsService from '../services/Build';
+import PlatformService from '../services/Platform';
 
 class BuildsOverviewPage extends Component {
 

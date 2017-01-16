@@ -1,4 +1,4 @@
-import Build from '../models/Builds';
+import Build from '../models/Build';
 
 class BuildsController {
 

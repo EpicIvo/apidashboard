@@ -1,4 +1,4 @@
-import Sites from '../models/Sites';
+import Sites from '../models/Site';
 
 class SitesController {
 

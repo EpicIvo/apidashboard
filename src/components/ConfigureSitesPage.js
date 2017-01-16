@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import update from 'react-addons-update';
-import SiteService from '../services/sites';
+import SiteService from '../services/Site';
 
 class ConfigureSitesPage extends Component {
 

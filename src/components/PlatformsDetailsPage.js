@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import appVars from '../config/appVars';
-import PlatformService from '../services/platforms';
+import PlatformService from '../services/Platform';
 
 class PlatformsDetailsPage extends Component {
 
