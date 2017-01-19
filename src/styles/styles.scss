@@ -7,30 +7,30 @@
 @import 'layout/_typography.scss';
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 #app {
-    height: 100vh;
-    position: relative;
+  height: 100vh;
+  position: relative;
 }
 
 .wrapper {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .content-container .container {
-    padding-bottom: 9%;
-    padding-top: 9%;
+  padding-bottom: 9%;
+  padding-top: 9%;
 
-    @include breakpoint(tablet) {
-        padding-top: 75px;
-        padding-bottom: 55px;
-    }
+  @include breakpoint(tablet) {
+    padding-top: 75px;
+    padding-bottom: 55px;
+  }
 }
 
 .only-mobile {
-    @include breakpoint(tablet) {
-        display: none;
-    }
+  @include breakpoint(tablet) {
+    display: none;
+  }
 }

@@ -1,29 +1,29 @@
 @mixin breakpoint($point) {
-    @if $point == tablet {
-        @media (min-width: 768px) {
-            @content;
-        }
-    } @else if $point == maxMobile {
-        @media (max-width: 767px) {
-            @content;
-        }
-    } @else if $point == desktop {
-        @media (min-width: 1024px) {
-            @content;
-        }
-    } @else if $point == desktop-m {
-        @media (min-width: 1170px) {
-            @content;
-        }
-    } @else if $point == vertical-m {
-        @media (min-height: 700px) {
-            @content;
-        }
-    } @else if $point == vertical-l {
-        @media (min-height: 900px) {
-            @content;
-        }
-    } @else {
-        @warn "Breakpoint mixin supports: mobile, tablet, facebook, desktop, desktop-m, desktop-l";
+  @if $point == tablet {
+    @media (min-width: 768px) {
+      @content;
     }
+  } @else if $point == maxMobile {
+    @media (max-width: 767px) {
+      @content;
+    }
+  } @else if $point == desktop {
+    @media (min-width: 1024px) {
+      @content;
+    }
+  } @else if $point == desktop-m {
+    @media (min-width: 1170px) {
+      @content;
+    }
+  } @else if $point == vertical-m {
+    @media (min-height: 700px) {
+      @content;
+    }
+  } @else if $point == vertical-l {
+    @media (min-height: 900px) {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint mixin supports: mobile, tablet, facebook, desktop, desktop-m, desktop-l";
+  }
 }

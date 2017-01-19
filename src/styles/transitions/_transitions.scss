@@ -1,52 +1,52 @@
 .transition {
-    &--page {
-        width: 100%;
-        $duration: 0.6s;
-        $offset: -20%;
-        $easing: ease-in-out;
+  &--page {
+    width: 100%;
+    $duration: 0.6s;
+    $offset: -20%;
+    $easing: ease-in-out;
 
-        &#{&}__forward {
-            &-enter {
-                transition: transform $duration $easing;
-                transform: translateX(100%);
-                position: fixed;
-                z-index: 10;
-                height: 100vh;
-                overflow: hidden;
+    &#{&}__forward {
+      &-enter {
+        transition: transform $duration $easing;
+        transform: translateX(100%);
+        position: fixed;
+        z-index: 10;
+        height: 100vh;
+        overflow: hidden;
 
-                &-active {
-                    transform: translateX(0);
-                }
-            }
-            &-leave {
-                transition: transform $duration $easing;
-                transform: translateX(0);
-                z-index: 9;
-
-                &-active {
-                    transform: translateX($offset);
-                }
-            }
+        &-active {
+          transform: translateX(0);
         }
-        &#{&}__backward {
-            &-enter {
-                transition: transform $duration $easing;
-                position: fixed;
-                transform: translateX($offset);
+      }
+      &-leave {
+        transition: transform $duration $easing;
+        transform: translateX(0);
+        z-index: 9;
 
-                &-active {
-                    transform: translateX(0);
-                }
-            }
-            &-leave {
-                transition: transform $duration $easing;
-                position: fixed;
-                transform: translateX(0);
-
-                &-active {
-                    transform: translateX(100%);
-                }
-            }
+        &-active {
+          transform: translateX($offset);
         }
+      }
     }
+    &#{&}__backward {
+      &-enter {
+        transition: transform $duration $easing;
+        position: fixed;
+        transform: translateX($offset);
+
+        &-active {
+          transform: translateX(0);
+        }
+      }
+      &-leave {
+        transition: transform $duration $easing;
+        position: fixed;
+        transform: translateX(0);
+
+        &-active {
+          transform: translateX(100%);
+        }
+      }
+    }
+  }
 }

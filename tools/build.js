@@ -8,26 +8,26 @@ process.env.NODE_ENV = 'production'; // this assures React is built in prod mode
 
 
 webpack(config).run((error, stats) => {
-    if (error) { // so a fatal error occurred. Stop here.
-        console.error(error);
-        return 1;
-    }
+  if(error) { // so a fatal error occurred. Stop here.
+    console.error(error);
+    return 1;
+  }
 
-    const jsonStats = stats.toJson();
+  const jsonStats = stats.toJson();
 
-    if (jsonStats.hasErrors) {
-        return jsonStats.errors.map(console.error);
-    }
+  if(jsonStats.hasErrors) {
+    return jsonStats.errors.map(console.error);
+  }
 
-    if (jsonStats.hasWarnings) {
-        console.warn('Webpack generated the following warnings: ');
-        jsonStats.warnings.map(console.warn);
-    }
+  if(jsonStats.hasWarnings) {
+    console.warn('Webpack generated the following warnings: ');
+    jsonStats.warnings.map(console.warn);
+  }
 
-    console.log(`Webpack stats: ${stats}`);
+  console.log(`Webpack stats: ${stats}`);
 
-    // if we got this far, the build succeeded.
-    console.info('Your app is compiled in production mode in /public. It\'s ready to roll!');
+  // if we got this far, the build succeeded.
+  console.info('Your app is compiled in production mode in /public. It\'s ready to roll!');
 
-    return 0;
+  return 0;
 });

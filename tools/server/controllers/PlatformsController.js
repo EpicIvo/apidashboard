@@ -1,36 +1,36 @@
-import Platforms from '../models/Platform';
+import Platform from '../models/Platform';
 
 class PlatformsController {
 
-    static find() {
-        return new Promise((resolve, reject) => {
+  static find() {
+    return new Promise((resolve, reject) => {
 
-            Platforms.find((err, platforms) => {
+      Platform.find((err, platforms) => {
 
-                if (!err) {
-                    resolve(platforms);
-                }
-                else {
-                    reject(err);
-                }
-            });
-        });
-    }
+        if(!err) {
+          resolve(platforms);
+        }
+        else {
+          reject(err);
+        }
+      });
+    });
+  }
 
-    static findOne(id) {
-        return new Promise((resolve, reject) => {
+  static findOne(id) {
+    return new Promise((resolve, reject) => {
 
-            Platforms.findById(id, (err, platform) => {
+      Platform.findById(id, (err, platform) => {
 
-                if (!err) {
-                    resolve(platform);
-                }
-                else {
-                    reject(err);
-                }
-            });
-        });
-    }
+        if(!err) {
+          resolve(platform);
+        }
+        else {
+          reject(err);
+        }
+      });
+    });
+  }
 }
 
 export default PlatformsController;

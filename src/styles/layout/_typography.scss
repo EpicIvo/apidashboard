@@ -1,68 +1,68 @@
 @import '../mixins/_fluid-type.scss';
 @import '../mixins/_breakpoints.scss';
 
-html,body {
-    @include fluid-type(font-size, 320px, 1170px, 16px, 20px);
+html, body {
+  @include fluid-type(font-size, 320px, 1170px, 16px, 20px);
 }
 
 body {
-    font-family: "Proxima N W01 Reg", sans-serif;
-    color: #464646;
+  font-family: "Proxima N W01 Reg", sans-serif;
+  color: #464646;
 }
 
 h1, h2, h3, h4, h5 {
-    font-family: 'Bitter', serif;
-    font-weight: normal;
-    -webkit-font-smoothing: antialiased;
+  font-family: 'Bitter', serif;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
 
-    small {
-        display: block;
-        font-family: 'Proximo Nova', sans-serif;
-        text-transform: uppercase;
-    }
+  small {
+    display: block;
+    font-family: 'Proximo Nova', sans-serif;
+    text-transform: uppercase;
+  }
 }
 
 h1,
 h2.sub-title {
-    font-size: 3rem;
-    line-height: 3.3rem;
+  font-size: 3rem;
+  line-height: 3.3rem;
 
-    @include breakpoint(tablet){
-        font-size: 4.5rem;
-        line-height: 4.7rem;
-    }
+  @include breakpoint(tablet) {
+    font-size: 4.5rem;
+    line-height: 4.7rem;
+  }
 }
 
 h2 {
-    font-size: 1.6rem;
-    line-height: 2rem;
+  font-size: 1.6rem;
+  line-height: 2rem;
 }
 
 h3 {
-    font-size: 1.2rem;
-    font-weight: 700;
-    line-height: 1.5rem;
-    margin-bottom: .9rem;
-    margin-top: 3.2rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.5rem;
+  margin-bottom: .9rem;
+  margin-top: 3.2rem;
 }
 
 p {
-    font-size: 1rem;
-    line-height: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
 
-    &.intro {
-        font-size: 1.5rem;
-        line-height: 2.2rem;
-        font-weight: normal;
+  &.intro {
+    font-size: 1.5rem;
+    line-height: 2.2rem;
+    font-weight: normal;
 
-        @include breakpoint(tablet){
-            font-size: 2rem;
-            line-height: 3rem;
-        }
+    @include breakpoint(tablet) {
+      font-size: 2rem;
+      line-height: 3rem;
     }
+  }
 }
 
 ul {
-    list-style-type: square;
-    margin-left: 1.2em;
+  list-style-type: square;
+  margin-left: 1.2em;
 }

@@ -7,20 +7,20 @@ import { Link, IndexLink } from 'react-router';
 class App extends React.Component {
   render() {
     return (
-        <div>
-          <header>
-              <nav className="nav navbar-default">
-                <IndexLink to="/">VTM</IndexLink>
-                {' | '}
-                <Link to="/platforms">Platforms</Link>
-                {' | '}
-                <Link to="/configure">Configure</Link>
-              </nav>
-          </header>
-            <div className="container">
-                {this.props.children}
-            </div>
+      <div>
+        <header>
+          <nav className="nav navbar-default">
+            <IndexLink to="/">VTM</IndexLink>
+            {' | '}
+            <Link to="/platforms">Platforms</Link>
+            {' | '}
+            <Link to="/configure">Configure</Link>
+          </nav>
+        </header>
+        <div className="container">
+          {this.props.children}
         </div>
+      </div>
     );
   }
 }
