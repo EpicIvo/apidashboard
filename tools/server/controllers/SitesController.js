@@ -46,6 +46,26 @@ class SitesController {
       });
     });
   }
+
+  static save(site) {
+    return new Promise((resolve, reject) => {
+
+      Site.update({ _id: site._id }, { $set: {
+        project: site.project,
+        slug: site.slug,
+        paths: site.paths,
+        domains: site.domains,
+      }}, ((err, res) => {
+
+        if (!err) {
+          resolve(res);
+        }
+        else {
+          reject(err);
+        }
+      }));
+    });
+  }
 }
 
 export default SitesController;

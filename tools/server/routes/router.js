@@ -115,6 +115,18 @@ router.route('/sites/:id')
       .catch((err) => {
         console.log(err);
       });
+  })
+
+  .post((req, res) => {
+
+    SitesController
+      .save(req.body)
+      .then((r) => {
+        res.end(JSON.stringify({ r }));
+      })
+      .catch((err) => {
+          console.log(err);
+      })
   });
 
 export default router;

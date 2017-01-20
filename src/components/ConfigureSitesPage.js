@@ -54,12 +54,21 @@ class ConfigureSitesPage extends Component {
     this.setState({ site: site });
   }
 
+  saveSite() {
+
+    let site = this.state.site;
+
+    this.Site.save(site).then((res) => {
+        console.log(res);
+    });
+  }
+
   render() {
     return (
       <div>
         { this.state.site && <div>
           <div>
-            <h3>Site <span className="btn btn-success">Save site</span></h3>
+            <h3>Site <span className="btn btn-success" onClick={() => this.saveSite()}>Save site</span></h3>
             <input type="text" className="form-control" defaultValue={this.state.site.project} />
           </div>
           <div>
