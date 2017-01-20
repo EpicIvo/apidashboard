@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import appVars from '../config/appVars';
 import moment from 'moment';
 import BuildsService from '../services/BuildService';
 import PlatformService from '../services/PlatformService';
@@ -57,5 +58,9 @@ class BuildDetailPage extends Component {
     );
   }
 }
+
+BuildDetailPage.propTypes = {
+  routeParams: React.PropTypes.object.isRequired
+};
 
 export default BuildDetailPage;

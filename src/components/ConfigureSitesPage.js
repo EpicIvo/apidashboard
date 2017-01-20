@@ -37,7 +37,6 @@ class ConfigureSitesPage extends Component {
     });
 
     this.setState({ site: updated });
-    console.log(updated);
   }
 
   addPath() {
@@ -56,7 +55,6 @@ class ConfigureSitesPage extends Component {
   }
 
   render() {
-    console.log(this.state.site);
     return (
       <div>
         { this.state.site && <div>
@@ -85,5 +83,9 @@ class ConfigureSitesPage extends Component {
     );
   }
 }
+
+ConfigureSitesPage.propTypes = {
+  params: React.PropTypes.object.isRequired
+};
 
 export default ConfigureSitesPage;

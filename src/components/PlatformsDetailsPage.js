@@ -58,4 +58,8 @@ class PlatformsDetailsPage extends Component {
   }
 }
 
+PlatformsDetailsPage.propTypes = {
+  params: React.PropTypes.object
+};
+
 export default PlatformsDetailsPage;

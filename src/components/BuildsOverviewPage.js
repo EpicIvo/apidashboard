@@ -56,7 +56,7 @@ class BuildsOverviewPage extends Component {
             <td>{build.platform && build.platform.name}</td>
             <td>{build.branch}</td>
             <td>
-              <a href={`/build/${build.ref}`}>View build</a>
+              <a href={`/build/${build._id}`}>View build</a>
             </td>
             <td>{moment(build.timestamp).fromNow()}</td>
             <td>{moment(build.timestamp).format('HH:mm DD-MM-YYYY')}</td>

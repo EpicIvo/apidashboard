@@ -13,10 +13,6 @@ class PlatformService {
     return fetch(this.base + '/v1/platforms/' + id).then(res => res.json());
   }
 
-  getCommits(id) {
-    return fetch(this.base + '/v1/platforms/' + id + '/commits').then(res => res.json());
-  }
-
   getBuilds(id) {
     return fetch(this.base + '/v1/platforms/' + id + '/builds').then(res => res.json());
   }

@@ -1,11 +1,11 @@
-import Sites from '../models/Site';
+import Site from '../models/Site';
 
 class SitesController {
 
   static find() {
     return new Promise((resolve, reject) => {
 
-      Sites.find({}, (err, sites) => {
+      Site.find({}, (err, sites) => {
 
         if(!err) {
           resolve(sites);
@@ -20,7 +20,7 @@ class SitesController {
   static findByPlatform(platform_id) {
     return new Promise((resolve, reject) => {
 
-      Sites.find({ platform: platform_id }, (err, sites) => {
+      Site.find({ platform: platform_id }, (err, sites) => {
 
         if(!err) {
           resolve(sites);
@@ -35,7 +35,7 @@ class SitesController {
   static findOne(id) {
     return new Promise((resolve, reject) => {
 
-      Sites.findById(id, (err, site) => {
+      Site.findById(id, (err, site) => {
 
         if(!err) {
           resolve(site);

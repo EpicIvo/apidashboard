@@ -31,6 +31,22 @@ class ConfigurePage extends Component {
     }
   }
 
+  componentWillReceiveProps(newProps) {
+
+    const id = newProps.params.id;
+
+    if (id) {
+        this.Platform.getSites(id).then((res) => {
+            this.setState({ sites: res.sites, platforms: null });
+        });
+    }
+    else {
+        this.Platform.get().then((res) => {
+            this.setState({ platforms: res.platforms, sites: null });
+        });
+    }
+  }
+
   render() {
     return (
       <div>
@@ -56,5 +72,9 @@ class ConfigurePage extends Component {
     );
   }
 }
+
+ConfigurePage.propTypes = {
+  params: React.PropTypes.object
+};
 
 export default ConfigurePage;
