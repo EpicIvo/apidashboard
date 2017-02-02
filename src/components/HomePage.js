@@ -1,10 +1,10 @@
 import React from 'react';
-import BuildsOverviewPage from './BuildsOverviewPage';
+import MovieOverviewPage from './ReceiptOverviewPage';
 
 const HomePage = () => {
   return (
     <div>
-      <BuildsOverviewPage />
+      <MovieOverviewPage />
     </div>
   );
 };
