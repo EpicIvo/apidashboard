@@ -1,7 +1,7 @@
 {
-  "name": "burst-vtm-dashboard",
+  "name": "FLG-money",
   "version": "1.0.0",
-  "description": "Visual Testing Module Dashboard",
+  "description": "FLG-money dashboard",
   "engines": {
     "npm": ">=3",
     "node": "6.9.1"
@@ -15,7 +15,7 @@
     "serve:public": "NODE_ENV=production babel-node tools/distServer.js",
     "postinstall": "npm run build"
   },
-  "author": "Burst",
+  "author": "Ivo",
   "license": "MIT",
   "dependencies": {
     "autoprefixer": "6.5.1",
@@ -111,6 +111,6 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://gitlab.com/burstdigital/burst-website.git"
+    "url": "https://github.com/EpicIvo/apidashboard"
   }
 }
