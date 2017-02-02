@@ -15,8 +15,8 @@ class ReceiptDetailPage extends Component {
         this.setState({receipt: res});
       });
   }
-  deleteMovie() {
-    this.Receipt.deleteMovie(this.state.movie._id);
+  deleteReceipt() {
+    this.Receipt.deleteReceipt(this.state.receipt._id);
   }
   render() {
     const Receipt = this.state.receipt;
@@ -41,7 +41,7 @@ class ReceiptDetailPage extends Component {
             <a href={`edit/${this.state.receipt._id}`}>Edit Receipt</a>
           </td>
           <td>
-            <a onClick={() => this.deleteMovie()}>Delete Receipt</a>
+            <a onClick={() => this.deleteReceipt()}>Delete Receipt</a>
           </td>
         </tr>
         </tbody>

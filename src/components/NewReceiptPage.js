@@ -20,9 +20,9 @@ class NewReceiptPage extends Component {
   }
 
   handleChangeName(event) {
-    let receipt = this.state.movie;
+    let receipt = this.state.receipt;
     receipt.title = event.target.value;
-    this.setState({Movie: receipt});
+    this.setState({Receipt: receipt});
   }
 
   handleChangeReceipt(event) {

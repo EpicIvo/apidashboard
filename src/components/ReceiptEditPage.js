@@ -5,9 +5,9 @@ class ReceiptEditPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      movie: null
+      Receipt: null
     };
-    this.Movie = new ReceiptService();
+    this.Receipt = new ReceiptService();
     this.handleChangeName = this.handleChangeName.bind(this);
     this.handleChangeAmount = this.handleChangeAmount.bind(this);
     this.save = this.save.bind(this);

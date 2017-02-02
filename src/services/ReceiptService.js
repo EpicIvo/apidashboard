@@ -1,6 +1,6 @@
 class ReceiptService {
   constructor() {
-    this.base = 'https://flg-money.herokuapp.com/v1/receipts';
+    this.base = 'https://flg-money.herokuapp.com';
   }
   get() {
     return fetch(this.base + '/v1/receipts/').then(res => res.json());

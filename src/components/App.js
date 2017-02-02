@@ -9,7 +9,7 @@ class App extends React.Component {
           <nav className="nav navbar-default">
             <IndexLink to="/">Home</IndexLink>
             |
-            <IndexLink to="/api/new">New movie</IndexLink>
+            <IndexLink to="/api/new">New receipt</IndexLink>
           </nav>
         </header>
         <div className="container">

@@ -30,7 +30,7 @@ class ReceiptOverviewPage extends Component {
           { this.state.receipts && this.state.receipts.map((Receipt) => <tr key={Receipt.item._id}>
             <td>{Receipt.item.title}</td>
             <td>
-              <a href={`api/movies/${Receipt.item._id}`}>View receipt</a>
+              <a href={`v1/receipt/${Receipt.item._id}`}>View receipt</a>
             </td>
           </tr>)}
           </tbody>
