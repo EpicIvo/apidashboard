@@ -33,7 +33,7 @@ class ReceiptEditPage extends Component {
   }
 
   save() {
-    this.Receipt.updateReceipt(this.state.movie._id, this.state.movie.name, this.state.movie.amount);
+    this.Receipt.updateReceipt(this.state.receipt._id, this.state.receipt.name, this.state.receipt.amount);
     console.log(this.state.receipt);
   }
  render() {
@@ -47,13 +47,13 @@ class ReceiptEditPage extends Component {
           <label>
             Title
           </label>
-          <input onChange={this.handleChangeName} value={this.state.movie.name} />
+          <input onChange={this.handleChangeName} value={this.state.receipt.name} />
         </div>
         <div>
           <label>
             Genre
           </label>
-          <input onChange={this.handleChangeAmount} value={this.state.movie.amount} />
+          <input onChange={this.handleChangeAmount} value={this.state.receipt.amount} />
         </div>
         <div>
           <span onClick={() => this.save()}>Save</span>

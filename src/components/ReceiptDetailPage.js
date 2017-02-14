@@ -13,6 +13,7 @@ class ReceiptDetailPage extends Component {
     this.Receipt.getById(this.props.routeParams.id)
       .then(res => {
         this.setState({receipt: res});
+        console.log(this.state.receipt);
       });
   }
   deleteReceipt() {
